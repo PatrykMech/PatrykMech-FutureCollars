@@ -1,31 +1,31 @@
 package com.futurecollars.lesson2.task6;
 
 public class DaysOfWeek {
-    public static String whatDayOfWeek(int dayNumber) {
-        if (dayNumber >= 1 && dayNumber <= 7) {
-            return dayName(dayNumber);
-        } else {
-            return "There is no such a day!";
-        }
-    }
-
-    public static String dayName(int dayNumber) {
+    public static String whatDayOfWeek(int dayNumber){
+        String dayName;
         switch (dayNumber) {
             case 1:
-                return "Monday";
+                dayName = "Monday";
+                break;
             case 2:
-                return "Tuesday";
+                dayName = "Tuesday";
+                break;
             case 3:
-                return "Wednesday";
+                dayName = "Wednesday";
+                break;
             case 4:
-                return "Thursday";
+                dayName = "Thursday";
+                break;
             case 5:
-                return "Friday";
+                dayName = "Friday";
+                break;
             case 6:
             case 7:
-                return "Weekend";
+                dayName = "Weekend";
+                break;
             default:
-                return "";
+                dayName = "There is no such a day!";
         }
+        return dayName;
     }
 }
