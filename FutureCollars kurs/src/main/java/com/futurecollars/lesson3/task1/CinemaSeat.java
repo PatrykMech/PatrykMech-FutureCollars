@@ -3,7 +3,7 @@ package com.futurecollars.lesson3.task1;
 public class CinemaSeat {
     private final int seatNumber;
     private final int rowNumber;
-    private boolean isTaken;
+    private final boolean isTaken;
 
     public CinemaSeat(int seatNumber, int rowNumber, boolean isTaken) {
         this.seatNumber = seatNumber;
@@ -19,11 +19,7 @@ public class CinemaSeat {
         return rowNumber;
     }
 
-    public String stateOfTheSeat() {
-        if (isTaken == true) {
-            return "Taken";
-        } else {
-            return "Free";
-        }
+    public boolean isTaken() {
+        return isTaken;
     }
 }
