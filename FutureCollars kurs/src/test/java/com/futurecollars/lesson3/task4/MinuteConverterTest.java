@@ -3,6 +3,8 @@ package com.futurecollars.lesson3.task4;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 public class MinuteConverterTest {
 
     @Test
@@ -10,9 +12,9 @@ public class MinuteConverterTest {
         // given
         int minutes = 10;
         //when
-        String secondsAfterConvert = MinuteConverter.convertMinutesToSeconds(minutes);
+        int seconds = MinuteConverter.convertMinutesToSeconds(minutes);
         //then
-        Assertions.assertEquals("600", secondsAfterConvert);
+        Assertions.assertEquals(600, seconds);
     }
 
     @Test
@@ -20,18 +22,8 @@ public class MinuteConverterTest {
         // given
         int minutes = 0;
         //when
-        String secondsAfterConvert = MinuteConverter.convertMinutesToSeconds(minutes);
+        int seconds = MinuteConverter.convertMinutesToSeconds(minutes);
         //then
-        Assertions.assertEquals("0", secondsAfterConvert);
-    }
-
-    @Test
-    void shouldConvertNegativeNumbers() {
-        // given
-        int minutes = -5;
-        //when
-        String errorMessage = MinuteConverter.convertMinutesToSeconds(minutes);
-        //then
-        Assertions.assertEquals("Minutes can't be negative", errorMessage);
+        Assertions.assertEquals(0, seconds);
     }
 }
