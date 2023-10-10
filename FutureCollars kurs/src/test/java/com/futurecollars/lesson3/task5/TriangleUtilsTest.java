@@ -3,7 +3,7 @@ package com.futurecollars.lesson3.task5;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class PythagoreanTheoremTest {
+public class TriangleUtilsTest {
 
     @Test
     void shouldTriangleBeRight(){
@@ -12,7 +12,7 @@ public class PythagoreanTheoremTest {
         int b = 4;
         int c = 5;
         //when
-        boolean  isTriangleRight = PythagoreanTheorem.isRightTriangle(a, b, c);
+        boolean  isTriangleRight = TriangleUtils.isRightTriangle(a, b, c);
         //then
         Assertions.assertTrue(isTriangleRight);
     }
@@ -24,7 +24,7 @@ public class PythagoreanTheoremTest {
         int b = 4;
         int c = 5;
         //when
-        boolean  isTriangleRight = PythagoreanTheorem.isRightTriangle(a, b, c);
+        boolean  isTriangleRight = TriangleUtils.isRightTriangle(a, b, c);
         //then
         Assertions.assertFalse(isTriangleRight);
     }
@@ -36,7 +36,7 @@ public class PythagoreanTheoremTest {
         int b = 4;
         int c = 5;
         //when
-        boolean  isTriangleRight = PythagoreanTheorem.isRightTriangle(a, b, c);
+        boolean  isTriangleRight = TriangleUtils.isRightTriangle(a, b, c);
         //then
         Assertions.assertFalse(isTriangleRight);
     }
@@ -48,7 +48,7 @@ public class PythagoreanTheoremTest {
         int b = 5;
         int c = 5;
         //when
-        boolean  isTriangleRight = PythagoreanTheorem.isRightTriangle(a, b, c);
+        boolean  isTriangleRight = TriangleUtils.isRightTriangle(a, b, c);
         //then
         Assertions.assertFalse(isTriangleRight);
     }
