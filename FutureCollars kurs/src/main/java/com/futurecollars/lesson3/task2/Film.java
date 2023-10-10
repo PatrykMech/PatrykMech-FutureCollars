@@ -3,13 +3,13 @@ package com.futurecollars.lesson3.task2;
 public class Film {
     private final String title;
     private final String directorName;
-    private final int length;
+    private final int lengthInMinutes;
     private final int productionYear;
 
-    public Film(String title, String directorName, int length, int productionYear) {
+    public Film(String title, String directorName, int lengthInMinutes, int productionYear) {
         this.title = title;
         this.directorName = directorName;
-        this.length = length;
+        this.lengthInMinutes = lengthInMinutes;
         this.productionYear = productionYear;
     }
 
@@ -21,8 +21,8 @@ public class Film {
         return directorName;
     }
 
-    public int getLength() {
-        return length;
+    public int getLengthInMinutes() {
+        return lengthInMinutes;
     }
 
     public int getProductionYear() {
