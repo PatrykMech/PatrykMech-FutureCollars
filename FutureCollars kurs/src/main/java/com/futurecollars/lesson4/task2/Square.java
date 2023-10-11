@@ -1,7 +1,7 @@
 package com.futurecollars.lesson4.task2;
 
 class Square extends Shape {
-    private final int side;
+    protected final int side;
 
     public Square(int side) {
         this.side = side;

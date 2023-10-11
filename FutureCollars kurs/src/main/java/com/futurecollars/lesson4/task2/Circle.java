@@ -1,8 +1,8 @@
 package com.futurecollars.lesson4.task2;
 
-class Circle extends Shape{
+class Circle extends Shape {
     private final int radius;
-    private final double PI_NUMBER = 3.14;
+    private static final double PI_NUMBER = 3.14;
 
     public Circle(int radius) {
         this.radius = radius;
