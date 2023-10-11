@@ -1,17 +1,19 @@
 package com.futurecollars.lesson4.task3;
 
-public class Square implements ShapeInterface {
+public class Square implements Shape {
     private final int side;
 
-    public Square(int side){
+    public Square(int side) {
         this.side = side;
     }
+
     @Override
-    public int getArea(){
+    public int getArea() {
         return side * side;
     }
+
     @Override
-    public int getPerimeter(){
+    public int getPerimeter() {
         return 4 * side;
     }
 }

@@ -1,6 +1,7 @@
 package com.futurecollars.lesson4.task3;
 
-public interface ShapeInterface {
+public interface Shape {
     int getArea();
+
     int getPerimeter();
 }
