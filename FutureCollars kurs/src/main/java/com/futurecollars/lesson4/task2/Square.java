@@ -1,19 +1,18 @@
 package com.futurecollars.lesson4.task2;
 
-class Square extends Shape {
-    protected final int side;
+class Square extends Rectangle {
 
     public Square(int side) {
-        this.side = side;
+        super(side, side);
     }
 
     @Override
     public double getArea() {
-        return side * side;
+        return length * length;
     }
 
     @Override
     public double getPerimeter() {
-        return 4 * side;
+        return 4 * length;
     }
 }

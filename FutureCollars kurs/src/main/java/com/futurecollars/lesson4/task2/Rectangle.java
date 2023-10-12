@@ -1,20 +1,22 @@
 package com.futurecollars.lesson4.task2;
 
-public class Rectangle extends Square {
+public class Rectangle extends Shape {
+    protected final int length;
     private final int width;
 
     public Rectangle(int length, int width) {
-        super(length);
+        this.length = length;
         this.width = width;
+
     }
 
     @Override
     public double getArea() {
-        return side * width;
+        return length * width;
     }
 
     @Override
     public double getPerimeter() {
-        return 2 * (side + width);
+        return 2 * (length + width);
     }
 }
