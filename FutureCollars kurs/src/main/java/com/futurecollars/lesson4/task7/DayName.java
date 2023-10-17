@@ -1,7 +1,7 @@
 package com.futurecollars.lesson4.task7;
 
 public class DayName {
-    public String showDayName(DayOfWeek day) {
+    public static String getDayName(DayOfWeek day) {
         return switch (day) {
             case MONDAY -> "Monday";
             case TUESDAY -> "Tuesday";

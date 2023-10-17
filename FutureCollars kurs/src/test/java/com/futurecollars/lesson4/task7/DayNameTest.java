@@ -7,11 +7,8 @@ public class DayNameTest {
 
     @Test
     void shouldGiveMonday() {
-        // When
-        DayName dayName = new DayName();
-
         // Given
-        String printDay = dayName.showDayName(DayOfWeek.MONDAY);
+        String printDay = DayName.getDayName(DayOfWeek.MONDAY);
 
         // Then
         Assertions.assertEquals("Monday", printDay);
@@ -19,11 +16,8 @@ public class DayNameTest {
 
     @Test
     void shouldGiveSunday() {
-        // When
-        DayName dayName = new DayName();
-
         // Given
-        String printDay = dayName.showDayName(DayOfWeek.SUNDAY);
+        String printDay = DayName.getDayName(DayOfWeek.SUNDAY);
 
         // Then
         Assertions.assertEquals("Sunday", printDay);
