@@ -2,16 +2,28 @@ package com.futurecollars.lesson5.task1;
 
 
 public class TextProcessor {
-    public static void main(String[] args) {
-        String text = "rotator";
-        boolean isPalindrome = PalindromeChecker.isPalindrome(text);
-        int textLength = TextLengthCounter.getTextLength(text);
 
-        if (TextVerifier.containsCharacters(text)) {
-            System.out.println("Text is empty");
+    public static String processText(String text) {
+        boolean isPalindrome = isPalindrome(text);
+        int textLength = getTextLength(text);
+
+        if (containsCharacters(text)) {
+            return "Text is empty";
         } else {
-            System.out.println("Palindrome: " + isPalindrome);
-            System.out.println("Text length: " + textLength);
+            return "Palindrome: " + isPalindrome + "\nText length: " + textLength;
         }
+    }
+
+    protected static boolean isPalindrome(String text) {
+        String reversedText = new StringBuilder(text).reverse().toString();
+        return text.equals(reversedText);
+    }
+
+    protected static int getTextLength(String text) {
+        return text.length();
+    }
+
+    protected static boolean containsCharacters(String text) {
+        return text.isEmpty();
     }
 }
