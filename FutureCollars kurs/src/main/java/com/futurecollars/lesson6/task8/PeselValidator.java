@@ -3,13 +3,13 @@ package com.futurecollars.lesson6.task8;
 import java.util.Scanner;
 
 public class PeselValidator {
-    public static void validatePesel(String pesel) {
+    public static void validatePesel(String pesel) throws WrongTypeOfDataException, IllegalLengthException {
         if (pesel.length() != 11) {
-            throw new IllegalArgumentException("Wrong length of PESEL");
+            throw new IllegalLengthException("Wrong length of PESEL: " + pesel);
         }
 
         if (!pesel.matches("\\d{11}")) {
-            throw new IllegalArgumentException("Wrong type");
+            throw new WrongTypeOfDataException("Wrong type of PESEL: " + pesel);
         }
     }
 
@@ -20,7 +20,7 @@ public class PeselValidator {
         String pesel = scanner.nextLine();
         try {
             validatePesel(pesel);
-        } catch (IllegalArgumentException ex) {
+        } catch (WrongTypeOfDataException | IllegalLengthException ex) {
             System.err.println(ex.getMessage());
         }
     }
