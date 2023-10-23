@@ -1,4 +1,4 @@
-package com.futurecollars.lesson7;
+package com.futurecollars.lesson7.task1;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;

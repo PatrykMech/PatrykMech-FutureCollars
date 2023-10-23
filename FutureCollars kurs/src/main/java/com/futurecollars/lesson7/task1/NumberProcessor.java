@@ -1,4 +1,4 @@
-package com.futurecollars.lesson7;
+package com.futurecollars.lesson7.task1;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
