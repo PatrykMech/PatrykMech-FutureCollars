@@ -1,8 +1,9 @@
 package com.futurecollars.lesson7.task2;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EmptySource;
+import org.junit.jupiter.params.provider.NullSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 public class TextTransformerTest {
@@ -17,24 +18,20 @@ public class TextTransformerTest {
         Assertions.assertEquals(input.toUpperCase(), result);
     }
 
-    @Test
-    void shouldHandleNullInput() {
-        // Given
-        String input = null;
-
-        // When
+    @ParameterizedTest
+    @NullSource
+    void shouldHandleNullInput(String input) {
+        // Given When
         String result = TextTransformer.convertToUppercase(input);
 
         // Then
         Assertions.assertNull(result);
     }
 
-    @Test
-    void shouldHandleEmptyInput() {
-        // Given
-        String input = "";
-
-        // When
+    @ParameterizedTest
+    @EmptySource
+    void shouldHandleEmptyInput(String input) {
+        // Given When
         String result = TextTransformer.convertToUppercase(input);
 
         // Then
