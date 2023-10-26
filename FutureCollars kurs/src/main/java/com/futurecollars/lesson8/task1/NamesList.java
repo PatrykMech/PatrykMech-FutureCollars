@@ -2,13 +2,14 @@ package com.futurecollars.lesson8.task1;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
+import java.util.LinkedHashSet;
 
 public class NamesList {
     public static void main(String[] args) {
         List<String> names = getStringList();
+
         List<String> uniqueNames = getUniqueNames(names);
         System.out.println("Lista bez duplikatów: " + String.join(", ", uniqueNames) + "\n");
 
@@ -36,20 +37,13 @@ public class NamesList {
     }
 
     private static List<String> getUniqueNames(List<String> names) {
-        Map<String, String> uniqueNamesMap = new LinkedHashMap<>();
-        for (String name : names) {
-            uniqueNamesMap.put(name, name);
-        }
-        return new ArrayList<>(uniqueNamesMap.values());
+        Set<String> uniqueNames = new LinkedHashSet<>(names);
+        return new ArrayList<>(uniqueNames);
     }
 
     private static List<String> updateName(List<String> names, String oldName, String newName) {
         List<String> updatedNames = new ArrayList<>(names);
-        for (int i = 0; i < updatedNames.size(); i++) {
-            if (updatedNames.get(i).equals(oldName)) {
-                updatedNames.set(i, newName);
-            }
-        }
+        Collections.replaceAll(updatedNames, oldName, newName);
         return updatedNames;
     }
 }
