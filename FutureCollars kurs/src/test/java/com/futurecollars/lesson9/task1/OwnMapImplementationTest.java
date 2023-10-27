@@ -4,13 +4,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class OwnHashMapTest {
+public class OwnMapImplementationTest {
 
     private OwnMap ownMap;
 
     @BeforeEach
     public void setUp() {
-        ownMap = new OwnHashMap();
+        ownMap = new OwnMapImplementation();
     }
 
     @Test
