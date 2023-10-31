@@ -1,13 +1,16 @@
 package com.futurecollars.lesson10.task5;
 
 import java.time.Year;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PasswordValidator {
 
     public static boolean isPasswordValid(String password) {
-        if (password.length() <= 7) {
+        Optional<String> optionalPassword = Optional.ofNullable(password);
+
+        if (optionalPassword.isEmpty() || password.length() <= 7) {
             return false;
         }
 

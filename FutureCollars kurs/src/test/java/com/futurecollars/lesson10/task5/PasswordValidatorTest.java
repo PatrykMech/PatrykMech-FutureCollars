@@ -76,4 +76,16 @@ public class PasswordValidatorTest {
         // then
         Assertions.assertFalse(result);
     }
+
+    @Test
+    public void shouldNotValidateNullPassword() {
+        // given
+        String passwordNull = null;
+
+        // when
+        boolean result = PasswordValidator.isPasswordValid(passwordNull);
+
+        // then
+        Assertions.assertFalse(result);
+    }
 }
