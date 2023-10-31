@@ -18,16 +18,28 @@ public class BirthdayInfo {
     }
 
     public static int calculateAge(String dateOfBirth) {
+        if (!isDateFormatValid(dateOfBirth)) {
+            throw new IllegalArgumentException("Invalid date of birth format");
+        }
+
         LocalDate birthDate = LocalDate.parse(dateOfBirth);
         return LocalDate.now().getYear() - birthDate.getYear();
     }
 
     public static DayOfWeek calculateDayOfWeek(String dateOfBirth) {
+        if (!isDateFormatValid(dateOfBirth)) {
+            throw new IllegalArgumentException("Invalid date of birth format");
+        }
+
         LocalDate birthDate = LocalDate.parse(dateOfBirth);
         return birthDate.getDayOfWeek();
     }
 
     public static int calculateWeekOfYear(String dateOfBirth) {
+        if (!isDateFormatValid(dateOfBirth)) {
+            throw new IllegalArgumentException("Invalid date of birth format");
+        }
+
         LocalDate birthDate = LocalDate.parse(dateOfBirth);
         WeekFields weekFields = WeekFields.of(Locale.getDefault());
         return birthDate.get(weekFields.weekOfWeekBasedYear());

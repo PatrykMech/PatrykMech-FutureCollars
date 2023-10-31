@@ -49,7 +49,7 @@ public class BirthdayInfoTest {
     @Test
     public void shouldCheckDateFormat() {
         // given
-        String invalidDateOfBirth = "1998-04-1";
+        String invalidDateOfBirth = "abc123!@3";
 
         // when
         boolean isValidInvalidDate = BirthdayInfo.isDateFormatValid(invalidDateOfBirth);
