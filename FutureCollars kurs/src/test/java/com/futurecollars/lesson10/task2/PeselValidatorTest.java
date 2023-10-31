@@ -40,4 +40,16 @@ public class PeselValidatorTest {
         // Then
         Assertions.assertFalse(isValid);
     }
+
+    @Test
+    public void shouldInvalidatePeselWithNull() {
+        // Given
+        String peselNull = null;
+
+        // When
+        boolean isValid = PeselValidator.validatePesel(peselNull);
+
+        // Then
+        Assertions.assertFalse(isValid);
+    }
 }
