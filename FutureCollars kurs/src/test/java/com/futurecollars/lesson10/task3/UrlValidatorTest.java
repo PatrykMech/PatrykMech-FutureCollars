@@ -36,4 +36,16 @@ public class UrlValidatorTest {
             Assertions.assertFalse(UrlValidator.validateUrl(url));
         }
     }
+
+    @Test
+    public void shouldInvalidateNullUrls() {
+        //Given
+        String nullUrl = null;
+
+        // When
+        boolean isValid = UrlValidator.validateUrl(nullUrl);
+
+        //Then
+        Assertions.assertFalse(isValid);
+    }
 }
