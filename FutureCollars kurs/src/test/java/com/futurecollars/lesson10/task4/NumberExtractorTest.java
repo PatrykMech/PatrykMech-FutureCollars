@@ -2,56 +2,32 @@ package com.futurecollars.lesson10.task4;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
+import java.util.Arrays;
 import java.util.List;
 
 
 public class NumberExtractorTest {
 
     @Test
-    public void shouldFindIntegers() {
-        // given
+    public void shouldExtractNumbers() {
+        // Given
         NumberExtractor extractor = new NumberExtractor();
+        List<String> valueList = Arrays.asList(
+                "342", "5.34", "756", "1.234e+07", "7.234243E-02", "6.09", "3457", "87", "1.0001", "3", "5"
+        );
 
-        // when
-        List<String> integers = extractor.findIntegers();
+        // When
+        List<String> integers = extractor.findIntegers(valueList);
+        List<String> floats = extractor.findFloats(valueList);
+        List<String> scientificNotationNumbers = extractor.findScientificNotationNumbers(valueList);
 
-        // then
-        Assertions.assertEquals(6, integers.size());
-        Assertions.assertTrue(integers.contains("342"));
-        Assertions.assertTrue(integers.contains("756"));
-        Assertions.assertTrue(integers.contains("3457"));
-        Assertions.assertTrue(integers.contains("87"));
-        Assertions.assertTrue(integers.contains("3"));
-        Assertions.assertTrue(integers.contains("5"));
-    }
+        // Then
+        List<String> expectedIntegers = Arrays.asList("342", "756", "3457", "87", "3", "5");
+        List<String> expectedFloats = Arrays.asList("5.34", "6.09", "1.0001");
+        List<String> expectedScientificNotationNumbers = Arrays.asList("1.234e+07", "7.234243E-02");
 
-    @Test
-    public void shouldFindFloats() {
-        // given
-        NumberExtractor extractor = new NumberExtractor();
-
-        // when
-        List<String> floats = extractor.findFloats();
-
-        // then
-        Assertions.assertEquals(3, floats.size());
-        Assertions.assertTrue(floats.contains("5.34"));
-        Assertions.assertTrue(floats.contains("6.09"));
-        Assertions.assertTrue(floats.contains("1.0001"));
-    }
-
-    @Test
-    public void shouldFindScientificNotationNumbers() {
-        // given
-        NumberExtractor extractor = new NumberExtractor();
-
-        // when
-        List<String> scientificNotationNumbers = extractor.findScientificNotationNumbers();
-
-        // then
-        Assertions.assertEquals(2, scientificNotationNumbers.size());
-        Assertions.assertTrue(scientificNotationNumbers.contains("1.234e+07"));
-        Assertions.assertTrue(scientificNotationNumbers.contains("7.234243E-02"));
+        Assertions.assertEquals(expectedIntegers, integers);
+        Assertions.assertEquals(expectedFloats, floats);
+        Assertions.assertEquals(expectedScientificNotationNumbers, scientificNotationNumbers);
     }
 }
