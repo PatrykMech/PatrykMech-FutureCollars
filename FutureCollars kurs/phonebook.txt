@@ -1,0 +1,5 @@
+Eve Miller	951847623	Poznań, Spychalskiego
+John Doe	123485964	New York
+Patryk Mech	123456789	Gdynia, Morelowa 101
+Adam Smith	741852963	Warszawa Ursynów
+Karol Kowalski	845963256	Warszawa
